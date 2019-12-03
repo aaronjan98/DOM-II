@@ -38,9 +38,19 @@ dragg.addEventListener('ondragend', () => {
 })
 
 // keypress event
+var count = 0;
 const key = document.querySelectorAll('img').forEach(el => {
-    window.addEventListener('keypress', (event) => {
-        el.style.filter = 'blur(10px)';
-        event.stopPropagation();
+    count ++;
+    if(count %2 === 0){
+        window.addEventListener('keypress', () => {       
+            el.style.filter = 'blur(10px)';
+        })
+    }
+})
+
+// scroll event
+const scroll = document.querySelectorAll('h2').forEach(el => {
+    window.addEventListener('scroll', () => {
+        el.style.color = 'fuchsia';
     })
 })
