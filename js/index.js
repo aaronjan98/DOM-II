@@ -14,19 +14,29 @@ FunBus.addEventListener("mouseleave", () => {
     FunBus.style.transform = "scale(1)";
 })
 
+// stop refreshing
+document.querySelectorAll('.nav-link').forEach(el => {
+    el.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('stopped the links from refreshing the page');
+    })
+})
+
 // click & dblclick events for nav items
 const nav = document.querySelectorAll('.nav-link').forEach(el => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', (event) => {
         el.style.color = 'red';
         el.style.fontFamily = 'Lobster, cursive';
         el.style.fontSize = '4rem';
         document.querySelector('.nav').style.width = '80%';
+        event.stopPropagation();
     })
-    el.addEventListener('dblclick', () => {
+    el.addEventListener('dblclick', (event) => {
         document.querySelector('header').style.backgroundColor = 'aqua';
         el.style.color = 'black';
         el.style.fontFamily = 'Robo';
         el.style.fontSize = '2rem';
+        event.stopPropagation();
     })
 })
 
@@ -37,15 +47,14 @@ dragg.addEventListener('dragend', () => {
     window.alert('hi');
 })
 
-// keypress event
-var count = 0;
+// keypress and blur event
 const key = document.querySelectorAll('img').forEach(el => {
-    count ++;
-    if(count %2 === 0){
         window.addEventListener('keypress', () => {       
             el.style.filter = 'blur(10px)';
         })
-    }
+        el.addEventListener('blur', () => {
+            window.alert('pictures are blury');
+        })
 })
 
 // scroll event
@@ -61,10 +70,11 @@ window.addEventListener('resize', () => {
     resize.style.backgroundColor = 'coral';
 })
 
-// fullscreenchange event
+// keydown event
 const screen = document.querySelectorAll('p').forEach(el => {
     window.addEventListener('keydown', (event) => {
         el.textContent = 'Hahaha THE TEXT IS GONE!';
         event.stopPropagation();
     })
 })
+
