@@ -36,3 +36,11 @@ const dragg = document.querySelector('.intro img');
 dragg.addEventListener('ondragend', () => {
     window.alert('hi');
 })
+
+// keypress event
+const key = document.querySelectorAll('img').forEach(el => {
+    window.addEventListener('keypress', (event) => {
+        el.style.filter = 'blur(10px)';
+        event.stopPropagation();
+    })
+})
