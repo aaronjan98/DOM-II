@@ -14,5 +14,12 @@ FunBus.addEventListener("mouseleave", () => {
 const nav = document.querySelectorAll('.nav-link').forEach(el => {
     el.addEventListener('click', () => {
         el.style.color = 'red';
+        el.style.fontFamily = 'Lobster, cursive';
+        el.style.fontSize = '2.6rem';
     })
 })
+
+// created a link tag in <head>
+const font = document.createElement('link');
+font.href = 'https://fonts.googleapis.com/css?family=Lobster&display=swap';
+font.rel = 'stylesheet';
