@@ -33,7 +33,7 @@ const nav = document.querySelectorAll('.nav-link').forEach(el => {
 // drag event for img/fun-bus.jpg
 const dragg = document.querySelector('.intro img');
 
-dragg.addEventListener('ondragend', () => {
+dragg.addEventListener('dragend', () => {
     window.alert('hi');
 })
 
@@ -56,7 +56,15 @@ const scroll = document.querySelectorAll('h2').forEach(el => {
 })
 
 // resize event
-// const resize = document.querySelector('body');
+const resize = document.querySelector('body');
 window.addEventListener('resize', () => {
-    resize.style.backgroundColor = 'yellow';
+    resize.style.backgroundColor = 'coral';
+})
+
+// fullscreenchange event
+const screen = document.querySelectorAll('p').forEach(el => {
+    window.addEventListener('keydown', (event) => {
+        el.textContent = 'Hahaha THE TEXT IS GONE!';
+        event.stopPropagation();
+    })
 })
