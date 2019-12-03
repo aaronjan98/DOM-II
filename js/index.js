@@ -54,3 +54,9 @@ const scroll = document.querySelectorAll('h2').forEach(el => {
         el.style.color = 'fuchsia';
     })
 })
+
+// resize event
+// const resize = document.querySelector('body');
+window.addEventListener('resize', () => {
+    resize.style.backgroundColor = 'yellow';
+})
