@@ -67,7 +67,7 @@ window.addEventListener('resize', () => {
     resize.style.backgroundColor = 'coral';
 })
 
-// keydown event
+// keydown & copy event
 const screen = document.querySelectorAll('p').forEach(el => {
     window.addEventListener('keydown', (event) => {
         el.textContent = 'Hahaha THE TEXT IS GONE!';
@@ -77,3 +77,6 @@ const screen = document.querySelectorAll('p').forEach(el => {
         window.alert('item has been copied');
     })
 })
+
+// gsap
+gsap.to('.btn', {duration: 7, x: 200, backgroundColor: 'purple', borderRadius: '0', ease: 'elastic'});
