@@ -48,13 +48,10 @@ dragg.addEventListener('dragend', () => {
 })
 
 // keypress and blur event
-const key = document.querySelectorAll('img').forEach(el => {
-        window.addEventListener('keypress', () => {       
-            el.style.filter = 'blur(10px)';
-        })
-        el.addEventListener('blur', () => {
-            window.alert('pictures are blury');
-        })
+document.querySelectorAll('img').forEach(el => {
+    window.addEventListener('keypress', () => {       
+        el.style.filter = 'blur(10px)';
+    })
 })
 
 // scroll event
@@ -76,5 +73,7 @@ const screen = document.querySelectorAll('p').forEach(el => {
         el.textContent = 'Hahaha THE TEXT IS GONE!';
         event.stopPropagation();
     })
+    el.addEventListener('copy', () => {
+        window.alert('item has been copied');
+    })
 })
-
