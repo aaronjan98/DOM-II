@@ -22,6 +22,11 @@ document.querySelectorAll('.nav-link').forEach(el => {
     })
 })
 
+const navBar = document.querySelector('nav');
+navBar.addEventListener('click', () => {
+    navBar.style.backgroundColor = 'black';
+})
+
 // click & dblclick events for nav items
 const nav = document.querySelectorAll('.nav-link').forEach(el => {
     el.addEventListener('click', (event) => {
